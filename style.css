@@ -1,8 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 .container {
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 2fr 2fr 1fr;
-  grid-template-rows: 400px 150px 360px 150px 360px 150px 360px 150px auto;
+  grid-template-rows: 100px 400px 150px 360px 150px 360px 150px 360px 150px auto;
   background-image: url("../images/sea.jpg");
   /* position: fixed; */
   /* 画像を常に天地左右の中央に配置 */
@@ -20,27 +24,37 @@
   border-radius: 8px;
   /* border: 3px solid #ccc; */
 }
-.box-main {
-  grid-row: 1 / 2;
+.box-image {
+  grid-row: 2 / 3;
   grid-column: 2 / 4;
   background: rgba(229, 130, 130, 0.5);
+  background-image: url("../images/jonan.jpg");
+  /* position: fixed; */
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  /* background-attachment: fixed; */
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
 }
 .box-gap1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-row: 2 / 3;
+  grid-row: 3 / 4;
   grid-column: 2 / 4;
   background: rgba(151, 145, 145, 0.5);
 }
 .box-bigA {
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   grid-column: 2 / 3;
   background: #fc2;
   background: rgba(231, 244, 53, 0.5);
 }
 .box-bigB {
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   grid-column: 3 / 4;
   background: rgba(8, 237, 241, 0.5);
 }
@@ -48,39 +62,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   grid-column: 2 / 4;
   background: rgba(151, 145, 145, 0.5);
 }
 .box-bigC {
   display: flex;
   grid-column: 2 / 3;
-  grid-row: 5 / 6;
+  grid-row: 6 / 7;
   background: rgba(8, 237, 241, 0.5);
 }
 .box-bigD {
   grid-column: 3 / 4;
-  grid-row: 5 / 6;
+  grid-row: 6 / 7;
   background: rgba(231, 244, 53, 0.5);
 }
 .box-gap3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-row: 6 / 7;
+  grid-row: 7 / 8;
   grid-column: 2 / 4;
   background: rgba(151, 145, 145, 0.5);
 }
 .box-bigE {
   grid-column: 2 / 3;
-  grid-row: 7 /8;
+  grid-row: 8 /9;
   background: rgba(231, 244, 53, 0.5);
 }
 .box-bigF {
   grid-column: 3 / 4;
-  grid-row: 7 /8;
+  grid-row: 8 /9;
   background: rgba(8, 237, 241, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 /* .box-bigG {
    grid-column: 2 / 4;
    grid-row: 3 / 5;
