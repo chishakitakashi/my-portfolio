@@ -4,49 +4,172 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>My Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Fredoka+One"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- <h1>ポートフォリオサイト</h1>
+    <header>
+      <li>My Portfolio</li>
+    </header>
+
+    <!-- <p>ポートフォリオサイト</p>
     <a href="https://www.webcreatorbox.com/tech/css-grid-layout"
       >参考サイト！</a
     > -->
 
     <div class="container">
-      <div class="item box-image">小戸公園で取った写真が良いな</div>
+      <div class="item box-image">
+        <img id="pic_top" src="images/top.jpg" alt="写真" title="top" />
+      </div>
       <div class="item box-gap1">
-        <h1>出身</h1>
+        <p>Profile</p>
       </div>
-      <div class="item box-bigA">A写真</div>
+      <div class="item box-bigA">
+        <img id="pic_A" src="images/sukiing.jpg" alt="写真" title="あ" />
+      </div>
       <div class="item box-bigB">
-        B
-        <p>福岡市で生まれ、高校まで過ごす</p>
-        <p>一番上の写真は高校同期との写真です</p>
-      </div>
-      <div class="item box-gap2"><h1>趣味</h1></div>
-      <div class="item box-bigC">
-        C
-        <p>高校から始めたバドミントンは今もサークルで続けてる</p>
-      </div>
-      <div class="item box-bigD">D写真</div>
-      <div class="item box-gap3"><h1>大学生活</h1></div>
-      <div class="item box-bigE">E写真</div>
-      <div class="item box-bigF">
-        <div class="F_box">
-          <p>F</p>
-          <p>北海道の空き家をリノベーションしたり</p>
-          <p>思いつきでボートで海に出て</p>
-          <p>そのまま海に野宿したりした</p>
+        <div class="B_box">
+          <p></p>
+          <p>出身：福岡県</p>
+          <br />
+          <p>誕生日：8月12日</p>
+          <br />
+          <p>大学：北海道大学大学院</p>
+          <br />
+          <p>趣味：麻雀</p>
+          <br />
+          <p>言語：Ruby on Rails, C#, Python</p>
         </div>
       </div>
-      <!-- <div class="item box-bigG">G</div>
-      <div class="item box-bigH">H</div>
-      <div class="item box-bigI">I</div>
-      <div class="item box-bigJ">J</div>
-      <div class="item box-bigK">K</div> -->
+      <div class="item box-gap2"><p>Drive</p></div>
+      <div class="item box-bigC">
+        <div class="C_box">
+          <p>道内で行って良かったとこ↓</p>
+          <br />
+          <p>富良野のラベンダー畑</p>
+          <br />
+          <p>函館の夜景</p>
+          <br />
+          <p>知床の流氷</p>
+          <br />
+          <p></p>
+        </div>
+      </div>
+      <div class="item box-bigD">
+        <img id="pic_D" src="images/furano.jpg" alt="D" title="D" />
+      </div>
+      <div class="item box-gap3"><p>Student Life</p></div>
+      <div class="item box-bigE">
+        <img id="pic_E" src="images/sukiing.jpg" alt="写真" title="あ" />
+      </div>
+      <div class="item box-bigF">
+        <div class="F_box">
+          <p>北海道の空き家をリノベーション</p>
+          <br />
+          <p>雪祭り行ったり</p>
+          <br />
+          <p>なんとなくボートで海へ、、などなど</p>
+          <br />
+
+          <br />
+        </div>
+      </div>
     </div>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+
+    <!-- javascript -->
+
+    <script>
+      // 参考サイト：（https://mebee.info/2021/04/08/post-32646/）
+      "use strict";
+
+      const imgA = [
+        "images/sukiing.jpg",
+        "images/fukuoka.jpg",
+        "images/mihoro.jpg",
+      ];
+
+      const imgD = [
+        "images/furano.jpg",
+        "images/shiretoko.jpg",
+        "images/hakodate.jpg",
+      ];
+
+      const imgE = [
+        "images/otaru.jpg",
+        "images/boat.jpg",
+        "images/yukimatsuri.jpg",
+      ];
+
+      let count = -1;
+
+      picChange();
+
+      function picChange() {
+        count++;
+        // カウントが最大になれば初期値に戻す
+        if (count == imgA.length) count = 0;
+        //画像選択
+        pic_A.src = imgA[count];
+        // カウントが最大になれば初期値に戻す
+        if (count == imgD.length) count = 0;
+        //画像選択
+        pic_D.src = imgD[count];
+        // カウントが最大になれば初期値に戻す
+        if (count == imgE.length) count = 0;
+        //画像選択
+        pic_E.src = imgE[count];
+        //1秒ごとに実行
+        setTimeout("picChange()", 10000);
+      }
+
+      // picDChange();
+
+      // function picDChange() {
+      //   count++;
+      //   // カウントが最大になれば初期値に戻す
+      //   if (count == imgD.length) count = 0;
+      //   //画像選択
+      //   pic_D.src = imgD[count];
+      //   //1秒ごとに実行
+      //   setTimeout("picDChange()", 10000);
+      // }
+
+      // picEChange();
+
+      // function picEChange() {
+      //   count++;
+      //   // カウントが最大になれば初期値に戻す
+      //   if (count == imgE.length) count = 0;
+      //   //画像選択
+      //   pic_E.src = imgE[count];
+      //   //1秒ごとに実行
+      //   setTimeout("picEChange()", 10000);
+      // }
+    </script>
+
+    <!-- javascriptここまで -->
   </body>
+
+  <footer>
+    <div class="sns">
+      <div class="insta-logo">
+        <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/74eqzhtrug" class="instagram"
+          >Instagram
+        </a>
+      </div>
+    </div>
+
+    <p class="lastName">- TAKASHI CHISHAKI -</p>
+  </footer>
 </html>
