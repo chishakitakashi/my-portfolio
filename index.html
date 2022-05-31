@@ -90,46 +90,46 @@
 
     <script>
       // 参考サイト：（https://mebee.info/2021/04/08/post-32646/）
-      "use strict";
+      "use strict"
 
       const imgA = [
         "images/sukiing.jpg",
         "images/fukuoka.jpg",
         "images/mihoro.jpg",
-      ];
+      ]
 
       const imgD = [
         "images/furano.jpg",
         "images/shiretoko.jpg",
         "images/hakodate.jpg",
-      ];
+      ]
 
       const imgE = [
         "images/otaru.jpg",
         "images/boat.jpg",
         "images/yukimatsuri.jpg",
-      ];
+      ]
 
-      let count = -1;
+      let count = -1
 
-      picChange();
+      picChange()
 
       function picChange() {
-        count++;
+        count++
         // カウントが最大になれば初期値に戻す
-        if (count == imgA.length) count = 0;
+        if (count == imgA.length) count = 0
         //画像選択
-        pic_A.src = imgA[count];
+        pic_A.src = imgA[count]
         // カウントが最大になれば初期値に戻す
-        if (count == imgD.length) count = 0;
+        if (count == imgD.length) count = 0
         //画像選択
-        pic_D.src = imgD[count];
+        pic_D.src = imgD[count]
         // カウントが最大になれば初期値に戻す
-        if (count == imgE.length) count = 0;
+        if (count == imgE.length) count = 0
         //画像選択
-        pic_E.src = imgE[count];
+        pic_E.src = imgE[count]
         //1秒ごとに実行
-        setTimeout("picChange()", 10000);
+        setTimeout("picChange()", 10000)
       }
 
       // picDChange();
